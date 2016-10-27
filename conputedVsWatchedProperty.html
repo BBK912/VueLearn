@@ -8,7 +8,33 @@
 <body>
     <div id="demo"> watch version: {{ fullName }}</div>
     <div id="demo1"> computed version: {{ fullName }}</div>
+    <div id="demo2">
+        <p>the firstName:{{ firstName }}</p>
+        <p>the lastName:{{ lastName }}</p>
+        <p>the fullName:{{ fullName }}</p>
+    </div>
 <script>
+    var demo2 = new Vue({
+        el:'#demo2',
+        data:{
+            firstName:'Foo',
+            lastName:'Bar'
+        },
+        computed:{
+            fullName:{
+                get:function() {
+                    return this.firstName + ' ' + this.lastName;
+                },
+                set:function(newValue) {
+                    var names = newValue.split(' ');
+                    this.firstName = names[0];
+                    this.lastName = names[names.length -1];
+                }
+            }
+        }
+    })
+
+
     var vm = new Vue({
         el:'#demo',
         data:{
