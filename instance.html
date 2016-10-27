@@ -8,7 +8,7 @@
 <body>
 <div id="app-1">
     {{msg | capitalize('123','3434') | lower}}
-    <a :href = "url" @click.prevent = "alert('ooo')"> {{msg}}</a>
+    <a v-bind:href = "url" v-on:click.prevent = "alert('ooo')"> {{msg}}</a>
 </div>
 
 <div id="example">
