@@ -19,16 +19,22 @@
     </style>
 </head>
 <body>
-    <div id="demo" v-bind:class="classobj" class="test">
+    <div id="demo" v-bind:class="classObject" class="test">
         test Vue Class and Style Binding.
     </div>
 <script>
     var vm = new Vue({
         el:'#demo',
         data: {
-            classobj:{
-                active:true,
-                'text-center':true
+            isActive: true,
+            error: null
+            },
+        computed: {
+            classObject: function () {
+                return {
+                active: this.isActive && !this.error,
+                'text-center': !(this.error && this.error.type === 'fatal'),
+                }
             }
         }
     })
