@@ -8,6 +8,9 @@
         div {
             width:200px;
             height:300px;
+            float:left;
+            font-size:12px;
+            margin-right:20px;
         }
         .active {
             border:1px solid #fe4dff;
@@ -22,7 +25,32 @@
     <div id="demo" v-bind:class="[{active:isActive},'text-center']" class="test">
         test Vue Class and Style Binding.
     </div>
+    <div id="demo1" v-bind:style="{color:activeColor,'font-size':fontSize + 'px'}">
+        test Vue Class and Style Binding.
+    </div>
+    <div id="demo2" v-bind:style="[styleObj,otherObj]">
+        test Vue Class and Style Binding.
+    </div>
 <script>
+    var vm1 = new Vue({
+        el:'#demo2',
+        data: {
+            styleObj:{
+                color:'green',
+                fontSize:'28px'
+            },
+            otherObj:{
+                border:'1px solid #333',
+            }
+        }
+    })
+    var vm1 = new Vue({
+        el:'#demo1',
+        data: {
+            activeColor: 'red',
+            fontSize: 16
+        }
+    })
     var vm = new Vue({
         el:'#demo',
         data: {
