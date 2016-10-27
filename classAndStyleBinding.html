@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <div id="demo" v-bind:class="classObject" class="test">
+    <div id="demo" v-bind:class="[{active:isActive},'text-center']" class="test">
         test Vue Class and Style Binding.
     </div>
 <script>
@@ -27,13 +27,13 @@
         el:'#demo',
         data: {
             isActive: true,
-            error: null
+            'text-center': 'text-center'
             },
         computed: {
             classObject: function () {
                 return {
-                active: this.isActive && !this.error,
-                'text-center': !(this.error && this.error.type === 'fatal'),
+                    active: this.isActive && !this.error,
+                    'text-center': !(this.error && this.error.type === 'fatal'),
                 }
             }
         }
