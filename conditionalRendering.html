@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue conditional Rendering</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div class="demo" >
+        <h1 v-if = "Math.random() > 0.5"> YES</h1>
+        <h1 v-else >NO</h1>
+        <h1 v-show="ok">v-show</h1>
+    </div>
+<script>
+    var vm = new Vue({
+        el:'.demo',
+        data: {
+            ok:true
+        }
+    })
+   
+</script>
+
+</body>
+</html>
