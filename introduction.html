@@ -8,7 +8,9 @@
 <body>
     <div id="app">
         {{ message }}
+        <p v-text:="message"></p>
     </div>
+
 
     <div id="app-2">
         <span v-bind:title = "message">
