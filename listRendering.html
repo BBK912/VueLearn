@@ -3,41 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue List Rendering</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <script src="js/vue.js"></script>
 </head>
 <body>
-    <ul id="demo">
+    <!-- <ul id="demo">
         <li v-for = "item of items">{{item.message}}</li>
         <span v-for="n in 5"> {{ n }} </span>
     </ul>
 
     <ul id="demo1">
         <li v-for = "(item, index) in items"> {{ parentMessage }} - {{index}} - {{item.message}}</li>
-    </ul>
-    
+    </ul> -->
+
+    <div class="container">
+        <h1>Hello Bootstrap, sit next to Vue</h1>
+        <ul class="list-group">
+            <li class="list-group-item" v-for = "i in 12">{{ i }} items 4 euqals {{ i * 4}}</li>
+        </ul>
+    </div>
 <script>
-    var vm1 = new Vue({
-        el:'#demo1',
-        data: {
-            parentMessage:'parent',
-            items :[
-                {message:'foo'},
-                {message:'bar'},
-                {message:'foo bar'}
-            ]
+    var vm3 = new Vue({
+        el:'.container',
+        data:{
+
         }
     })
-    var vm = new Vue({
-        el:'#demo',
-        data: {
-            items :[
-                {message:'foo'},
-                {message:'bar'},
-                {message:'foo bar'}
-            ]
-        }
-    })
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var vm1 = new Vue({
+    //     el:'#demo1',
+    //     data: {
+    //         parentMessage:'parent',
+    //         items :[
+    //             {message:'foo'},
+    //             {message:'bar'},
+    //             {message:'foo bar'}
+    //         ]
+    //     }
+    // })
+    // var vm = new Vue({
+    //     el:'#demo',
+    //     data: {
+    //         items :[
+    //             {message:'foo'},
+    //             {message:'bar'},
+    //             {message:'foo bar'}
+    //         ]
+    //     }
+    // })
+
 </script>
 
 </body>
