@@ -16,17 +16,32 @@
         <li v-for = "(item, index) in items"> {{ parentMessage }} - {{index}} - {{item.message}}</li>
     </ul> -->
 
-    <div class="container">
+    <!-- <div class="container">
         <h1>Hello Bootstrap, sit next to Vue</h1>
         <ul class="list-group">
             <li class="list-group-item" v-for = "i in 12">{{ i }} items 4 euqals {{ i * 4}}</li>
         </ul>
+    </div> -->
+    <div class="container">
+        <h1>let's hear some stories!</h1>
+        <div>
+            <ul class="list-groud">
+                <li class="list-group-item" v-for="story in stories">
+                    Someone said "{{ story }}"
+                </li>
+            </ul>
+        </div>
+        <pre>{{$data}}</pre>
     </div>
 <script>
     var vm3 = new Vue({
         el:'.container',
         data:{
-
+            stories:[
+                "I love you",
+                "did you love me",
+                "i have some words to say."
+            ]
         }
     })
 
