@@ -26,8 +26,8 @@
         <h1>let's hear some stories!</h1>
         <div>
             <ul class="list-groud">
-                <li class="list-group-item" v-for="story in stories">
-                    Someone said "{{ story }}"
+                <li class="list-group-item" v-for="story,i in stories">
+                {{i+1}} . {{story.writer}} said "{{ story.plot }}"
                 </li>
             </ul>
         </div>
@@ -38,9 +38,19 @@
         el:'.container',
         data:{
             stories:[
-                "I love you",
-                "did you love me",
-                "i have some words to say."
+                {
+                    plot:"I love you",
+                    writer:'baojun'
+                },
+                {
+                    plot:"did you love me",
+                    writer:'jhon'
+                },
+                {
+                    plot:"i have some words to say.",
+                    writer:'Alex'
+                }
+
             ]
         }
     })
