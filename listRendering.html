@@ -26,8 +26,8 @@
         <h1>let's hear some stories!</h1>
         <div>
             <ul class="list-groud">
-                <li class="list-group-item" v-for="story,key,index in stories">
-                 {{index}}  {{key}} {{story}}
+                <li class="list-group-item" v-for="story in stories | filterBy 'baojun' in 'writer'">
+                    {{story.writer}} said "{{ story.plot }}
                 </li>
             </ul>
         </div>
@@ -37,20 +37,20 @@
     var vm3 = new Vue({
         el:'.container',
         data:{
-            stories:
+            stories:[
                 {
                     plot:"I love you",
                     writer:'baojun'
                 },
-                // {
-                //     plot:"did you love me",
-                //     writer:'jhon'
-                // },
-                // {
-                //     plot:"i have some words to say.",
-                //     writer:'Alex'
-                // }
-
+                {
+                    plot:"did you love me",
+                    writer:'jhon'
+                },
+                {
+                    plot:"i have some words to say.",
+                    writer:'Alex'
+                }
+            ]
         }
     })
 
