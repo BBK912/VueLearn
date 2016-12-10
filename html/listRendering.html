@@ -7,26 +7,56 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
-    <!-- <ul id="demo">
+    <ul id="demo">
         <li v-for = "item of items">{{item.message}}</li>
         <span v-for="n in 5"> {{ n }} </span>
     </ul>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:'#demo',
+            data: {
+                items :[
+                    {message:'foo'},
+                    {message:'bar'},
+                    {message:'foo bar'}
+                ]
+            }
+        })
+    </script>
 
     <ul id="demo1">
         <li v-for = "(item, index) in items"> {{ parentMessage }} - {{index}} - {{item.message}}</li>
-    </ul> -->
-
-    <!-- <div class="container">
+    </ul>
+    <script type="text/javascript">
+        var vm1 = new Vue({
+            el:'#demo1',
+            data: {
+                parentMessage:'parent',
+                items :[
+                    {message:'foo'},
+                    {message:'bar'},
+                    {message:'foo bar'}
+                ]
+            }
+        })
+    </script>
+    <div id="demo2">
         <h1>Hello Bootstrap, sit next to Vue</h1>
         <ul class="list-group">
             <li class="list-group-item" v-for = "i in 12">{{ i }} items 4 euqals {{ i * 4}}</li>
         </ul>
-    </div> -->
+    </div>
+    <script type="text/javascript">
+        var vm2 = new Vue({
+            el: '#demo2'
+        })
+    </script>
+
     <div class="container">
         <h1>let's hear some stories!</h1>
         <div>
             <ul class="list-groud">
-                <li class="list-group-item" v-for="story in stories | filterBy 'baojun' in 'writer'">
+                <li class="list-group-item" v-for="story in stories">
                     {{story.writer}} said "{{ story.plot }}
                 </li>
             </ul>
@@ -53,57 +83,6 @@
             ]
         }
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // var vm1 = new Vue({
-    //     el:'#demo1',
-    //     data: {
-    //         parentMessage:'parent',
-    //         items :[
-    //             {message:'foo'},
-    //             {message:'bar'},
-    //             {message:'foo bar'}
-    //         ]
-    //     }
-    // })
-    // var vm = new Vue({
-    //     el:'#demo',
-    //     data: {
-    //         items :[
-    //             {message:'foo'},
-    //             {message:'bar'},
-    //             {message:'foo bar'}
-    //         ]
-    //     }
-    // })
-
 </script>
 
 </body>
